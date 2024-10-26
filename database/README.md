@@ -76,7 +76,7 @@ CREATE DATABASE baitaplon CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 mysql -u [username] -p baitaplon < db.sql
 ```
 ## Backup database: 
-# Để backup database:
+### Để backup database:
 ```bash
 mysqldump -u [username] -p baitaplon > baitaplon_backup.sql
 ```
