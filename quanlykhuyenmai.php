@@ -46,6 +46,32 @@ $result = $conn->query("SELECT * FROM khuyenmai");
 <div class="container my-5" id="khuyenMai">
     <h1 class="text-center" style="color: darkblue;">Khuyến Mãi</h1>
 
+    <h5 class="mt-4">Thêm Khuyến Mãi Mới</h5>
+    <form id="promotionForm" method="post" action="" class="mt-3">
+        <input type="hidden" name="action" id="formAction" value="add">
+        <div class="mb-3">
+      
+            <input type="text" name="km_id" class="form-control" id="km_id" placeholder="Nhập ID khuyến mãi" required>
+        </div>
+        <div class="mb-3">
+      
+            <input type="text" name="ten_khuyen_mai" class="form-control" id="ten_khuyen_mai" placeholder="Nhập tên khuyến mãi" required>
+        </div>
+        <div class="mb-3">
+          
+            <input type="number" name="giam_gia" class="form-control" id="giam_gia" placeholder="Nhập phần trăm giảm giá" required>
+        </div>
+        <div class="mb-3">
+            <label for="thoiGianBatDau" class="form-label">Thời Gian Bắt Đầu</label>
+            <input type="date" name="ngay_bat_dau" class="form-control" id="ngay_bat_dau" required>
+        </div>
+        <div class="mb-3">
+            <label for="thoiGianKetThuc" class="form-label">Thời Gian Kết Thúc</label>
+            <input type="date" name="ngay_ket_thuc" class="form-control" id="ngay_ket_thuc" required>
+        </div>
+        <button type="submit" name="add" id="submitBtn" class="btn btn-primary">Thêm Khuyến Mãi</button>
+    </form>
+
     <div class="mb-3">
         <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm khuyến mãi...">
     </div>
@@ -79,31 +105,7 @@ $result = $conn->query("SELECT * FROM khuyenmai");
         </tbody>
     </table>
 
-    <h5 class="mt-4">Thêm Khuyến Mãi Mới</h5>
-    <form id="promotionForm" method="post" action="" class="mt-3">
-        <input type="hidden" name="action" id="formAction" value="add">
-        <div class="mb-3">
-            <label for="km_id" class="form-label">ID Khuyến Mãi</label>
-            <input type="text" name="km_id" class="form-control" id="km_id" placeholder="Nhập ID khuyến mãi" required>
-        </div>
-        <div class="mb-3">
-            <label for="tenKhuyenMai" class="form-label">Tên Khuyến Mãi</label>
-            <input type="text" name="ten_khuyen_mai" class="form-control" id="ten_khuyen_mai" placeholder="Nhập tên khuyến mãi" required>
-        </div>
-        <div class="mb-3">
-            <label for="giamGia" class="form-label">Giảm Giá (%)</label>
-            <input type="number" name="giam_gia" class="form-control" id="giam_gia" placeholder="Nhập phần trăm giảm giá" required>
-        </div>
-        <div class="mb-3">
-            <label for="thoiGianBatDau" class="form-label">Thời Gian Bắt Đầu</label>
-            <input type="date" name="ngay_bat_dau" class="form-control" id="ngay_bat_dau" required>
-        </div>
-        <div class="mb-3">
-            <label for="thoiGianKetThuc" class="form-label">Thời Gian Kết Thúc</label>
-            <input type="date" name="ngay_ket_thuc" class="form-control" id="ngay_ket_thuc" required>
-        </div>
-        <button type="submit" name="add" id="submitBtn" class="btn btn-primary">Thêm Khuyến Mãi</button>
-    </form>
+    
 </div>
 
 <script>

@@ -289,7 +289,7 @@ $result_hangghe = $conn->query($sql_hangghe);
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    window.location.href = `booking_success.php?booking_id=${data.booking_id}`;
+                    window.location.href = `confrim_booking.php?booking_id=${data.booking_id}`;
                 } else {
                     alert(data.message || 'Có lỗi xảy ra khi đặt vé');
                     confirmButton.disabled = false;

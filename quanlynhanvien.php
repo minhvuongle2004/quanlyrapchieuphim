@@ -73,48 +73,6 @@ $result = $conn->query("SELECT * FROM nhanvien ORDER BY chucvuID");
         <a href="chucvu.php" class="btn btn-success"> Chức Vụ</a>
     </div>
 
-    <div class="mb-3">
-        <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm nhân viên...">
-    </div>
-
-    <table class="table table-bordered" id="employeeTable">
-        <thead>
-            <tr>
-                <th>ID Nhân Viên</th>
-                <th>Họ Tên</th>
-                <th>Ngày Sinh</th>
-                <th>Giới Tính</th>
-                <th>SĐT</th>
-                <th>Email</th>
-                <th>Địa Chỉ</th>
-                <th>ID Chức Vụ</th>
-                <th>Mật Khẩu</th>
-                <th>Lương</th>
-                <th>Hành Động</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while ($row = $result->fetch_assoc()): ?>
-                <tr>
-                    <td><?php echo $row['NhanVienID']; ?></td>
-                    <td><?php echo $row['ho_ten']; ?></td>
-                    <td><?php echo $row['ngay_sinh']; ?></td>
-                    <td><?php echo $row['gioi_tinh']; ?></td>
-                    <td><?php echo $row['sdt']; ?></td>
-                    <td><?php echo $row['email']; ?></td>
-                    <td><?php echo $row['dia_chi']; ?></td>
-                    <td><?php echo $row['chucvuID']; ?></td>
-                    <td>******</td>
-                    <td><?php echo $row['luong']; ?></td>
-                    <td>
-                        <button class="btn btn-warning btn-sm edit-btn" data-id="<?php echo $row['NhanVienID']; ?>">Sửa</button>
-                        <a href="?delete=<?php echo $row['NhanVienID']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân viên này?')">Xóa</a>
-                    </td>
-                </tr>
-            <?php endwhile; ?>
-        </tbody>
-    </table>
-
     <h2>Thêm/Sửa Nhân Viên </h2>
     <form method="post" action="" id="employeeForm" class="mt-3">
         <input type="hidden" name="action" id="formAction" value="add">
@@ -157,6 +115,50 @@ $result = $conn->query("SELECT * FROM nhanvien ORDER BY chucvuID");
         </div>
         <button type="submit" name="add" id="submitBtn" class="btn btn-primary">Thêm Nhân Viên</button>
     </form>
+
+    <div class="mb-3">
+        <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm nhân viên...">
+    </div>
+
+    <table class="table table-bordered" id="employeeTable">
+        <thead>
+            <tr>
+                <th>ID Nhân Viên</th>
+                <th>Họ Tên</th>
+                <th>Ngày Sinh</th>
+                <th>Giới Tính</th>
+                <th>SĐT</th>
+                <th>Email</th>
+                <th>Địa Chỉ</th>
+                <th>ID Chức Vụ</th>
+                <th>Mật Khẩu</th>
+                <th>Lương</th>
+                <th>Hành Động</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <tr>
+                    <td><?php echo $row['NhanVienID']; ?></td>
+                    <td><?php echo $row['ho_ten']; ?></td>
+                    <td><?php echo $row['ngay_sinh']; ?></td>
+                    <td><?php echo $row['gioi_tinh']; ?></td>
+                    <td><?php echo $row['sdt']; ?></td>
+                    <td><?php echo $row['email']; ?></td>
+                    <td><?php echo $row['dia_chi']; ?></td>
+                    <td><?php echo $row['chucvuID']; ?></td>
+                    <td>******</td>
+                    <td><?php echo $row['luong']; ?></td>
+                    <td>
+                        <button class="btn btn-warning btn-sm edit-btn" data-id="<?php echo $row['NhanVienID']; ?>">Sửa</button>
+                        <a href="?delete=<?php echo $row['NhanVienID']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Bạn có chắc chắn muốn xóa nhân viên này?')">Xóa</a>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </tbody>
+    </table>
+
+    
 </div>
 
 <script>

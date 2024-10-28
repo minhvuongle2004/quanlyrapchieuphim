@@ -69,6 +69,16 @@ $result = $conn->query($sql);
 <div class="container my-5" id="phongChieu">
     <h1 class="text-center" style="color: darkblue;">Thông Tin Phòng Chiếu</h1>
 
+    <h6>Thêm Phòng Chiếu Mới</h6>
+    <form method="POST" action="" id="employeeForm" class="form-inline">
+        <input type="hidden" name="action" id="formAction" value="add">
+        <input type="text" name="phong_id" id="phong_id" class="form-control mb-2 mr-sm-2" placeholder="ID Phòng" required>
+        <input type="text"  name="ten_phong" id="ten_phong" class="form-control mb-2 mr-sm-2" placeholder="Tên Phòng" required>
+        <input type="number" name="tong_ghe" id="tong_ghe" class="form-control mb-2 mr-sm-2" placeholder="Tổng Ghế" required>
+        <button type="submit" name="add" value="add" class="btn btn-primary" id="submitBtn" style="background-color: red;">Thêm</button>
+    </form>
+
+
     <div class="mb-3">
         <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm phòng chiếu...">
     </div>
@@ -97,14 +107,7 @@ $result = $conn->query($sql);
         </tbody>
     </table>
 
-    <h6>Thêm Phòng Chiếu Mới</h6>
-    <form method="POST" action="" id="employeeForm" class="form-inline">
-        <input type="hidden" name="action" id="formAction" value="add">
-        <input type="text" name="phong_id" id="phong_id" class="form-control mb-2 mr-sm-2" placeholder="ID Phòng" required>
-        <input type="text"  name="ten_phong" id="ten_phong" class="form-control mb-2 mr-sm-2" placeholder="Tên Phòng" required>
-        <input type="number" name="tong_ghe" id="tong_ghe" class="form-control mb-2 mr-sm-2" placeholder="Tổng Ghế" required>
-        <button type="submit" name="add" value="add" class="btn btn-primary" id="submitBtn" style="background-color: red;">Thêm</button>
-    </form>
+    
 </div>
 
 

@@ -85,6 +85,19 @@ $result = $stmt->get_result();
 <div class="container my-5" id="suatChieu">
     <h1 class="text-center" style="color: darkblue;">Quản lý Suất Chiếu</h1>
 
+    <!-- Form thêm/sửa suất chiếu -->
+    <h6>Thêm Suất Chiếu Mới</h6>
+    <form method="post" action="" id="employeeForm" class="form-inline">
+        <input type="hidden" name="action" id="formAction" value="add">
+        <input type="text" name="suat_id" id="suat_id" class="form-control mb-2 mr-sm-2" placeholder="ID Suất" required>
+        <input type="text" name="phim_id" id="phim_id" class="form-control mb-2 mr-sm-2" placeholder="ID Phim" required>
+        <input type="text" name="phong_id" id="phong_id" class="form-control mb-2 mr-sm-2" placeholder="ID Phòng" required>
+        <input type="datetime-local" name="gio_chieu" id="gio_chieu" class="form-control mb-2 mr-sm-2" required>
+        <input type="number" name="gia" id="gia" class="form-control mb-2 mr-sm-2" placeholder="Giá (VNĐ)" required>
+
+        <button type="submit" name="add" class="btn btn-primary" id="submitBtn" style="background-color: red;">Thêm suất chiếu</button>
+    </form>
+
     <div class="mb-3">
         <form action="" method="GET" class="d-flex">
             <input type="text" name="search" id="searchInput" class="form-control" placeholder="Tìm kiếm suất chiếu..." value="<?php echo htmlspecialchars($search); ?>">
@@ -157,18 +170,7 @@ $result = $stmt->get_result();
         </ul>
     </nav>
 
-    <!-- Form thêm/sửa suất chiếu -->
-    <h6>Thêm Suất Chiếu Mới</h6>
-    <form method="post" action="" id="employeeForm" class="form-inline">
-        <input type="hidden" name="action" id="formAction" value="add">
-        <input type="text" name="suat_id" id="suat_id" class="form-control mb-2 mr-sm-2" placeholder="ID Suất" required>
-        <input type="text" name="phim_id" id="phim_id" class="form-control mb-2 mr-sm-2" placeholder="ID Phim" required>
-        <input type="text" name="phong_id" id="phong_id" class="form-control mb-2 mr-sm-2" placeholder="ID Phòng" required>
-        <input type="datetime-local" name="gio_chieu" id="gio_chieu" class="form-control mb-2 mr-sm-2" required>
-        <input type="number" name="gia" id="gia" class="form-control mb-2 mr-sm-2" placeholder="Giá (VNĐ)" required>
 
-        <button type="submit" name="add" class="btn btn-primary" id="submitBtn" style="background-color: red;">Thêm suất chiếu</button>
-    </form>
 </div>
 
 <script>

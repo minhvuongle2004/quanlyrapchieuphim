@@ -39,6 +39,32 @@ $result = $conn->query("SELECT * FROM nhacungcapphim")
 <!-- Nội dung nguồn cung cấp phim -->
 <div class="container my-5" id="nguonPhim">
     <h1 class="text-center" style="color: darkblue;">Nguồn Cung Cấp Phim</h1>
+
+    <h5 class="mt-4">Thêm/Sửa Nhà Cung Cấp Phim Mới</h5>
+    <form action="" method="post" id="employeeForm">
+        <input type="hidden" name="action" id="formAction" value="add">
+        <div class="mb-3">
+    
+            <input type="text" name="ncc_id" class="form-control" id="ncc_id" placeholder="Nhập ID nhà cung cấp" required>
+        </div>
+        <div class="mb-3">
+            <input type="text" name="ten_nha_cung_cap" class="form-control" id="ten_nha_cung_cap" placeholder="Nhập tên nhà cung cấp" required>
+        </div>
+        <div class="mb-3">
+ 
+            <input type="text" name="dia_chi" class="form-control" id="dia_chi" placeholder="Nhập địa chỉ" required>
+        </div>
+        <div class="mb-3">
+      
+            <input type="tel" name="sdt" class="form-control" id="sdt" placeholder="Nhập số điện thoại" required>
+        </div>
+        <div class="mb-3">
+         
+            <input type="email" name="email" class="form-control" id="email" placeholder="Nhập email" required>
+        </div>
+        <button type="submit" name="add" id="submitBtn" class="btn btn-primary">Thêm </button>
+    </form>
+
     <div class="mb-3">
         <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm nhà cung cấp...">
     </div>
@@ -74,31 +100,7 @@ $result = $conn->query("SELECT * FROM nhacungcapphim")
 
     </div>
 
-    <h5 class="mt-4">Thêm/Sửa Nhà Cung Cấp Phim Mới</h5>
-    <form action="" method="post" id="employeeForm">
-        <input type="hidden" name="action" id="formAction" value="add">
-        <div class="mb-3">
-            <label for="ncc_id" class="form-label">ID Nhà Cung Cấp</label>
-            <input type="text" name="ncc_id" class="form-control" id="ncc_id" placeholder="Nhập ID nhà cung cấp" required>
-        </div>
-        <div class="mb-3">
-            <label for="ten_nha_cung_cap" class="form-label">Tên Nhà Cung Cấp</label>
-            <input type="text" name="ten_nha_cung_cap" class="form-control" id="ten_nha_cung_cap" placeholder="Nhập tên nhà cung cấp" required>
-        </div>
-        <div class="mb-3">
-            <label for="dia_chi" class="form-label">Địa Chỉ</label>
-            <input type="text" name="dia_chi" class="form-control" id="dia_chi" placeholder="Nhập địa chỉ" required>
-        </div>
-        <div class="mb-3">
-            <label for="sdt" class="form-label">Số Điện Thoại</label>
-            <input type="tel" name="sdt" class="form-control" id="sdt" placeholder="Nhập số điện thoại" required>
-        </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="Nhập email" required>
-        </div>
-        <button type="submit" name="add" id="submitBtn" class="btn btn-primary">Thêm </button>
-    </form>
+    
 
 </div>
 

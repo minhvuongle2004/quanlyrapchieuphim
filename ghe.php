@@ -56,6 +56,15 @@ if (isset($_GET['delete'])) {
 <div class="container my-5" id="quanLyGhe">
     <h1 class="text-center" style="color: darkblue;">Quản Lý Ghế</h1>
 
+    <h6>Thêm/Sửa Ghế</h6>
+    <form id="addSeatForm" method="POST">
+        <input type="hidden" name="id" id="id">
+        <input type="text" name="ghe_id" id="ghe_id" class="form-control mb-2 mr-sm-2" placeholder="ID Ghế" required>
+        <input type="text" name="phong_id" id="phong_id" class="form-control mb-2 mr-sm-2" placeholder="ID Phòng" required>
+        <input type="text" name="hang_ghe" id="hang_ghe" class="form-control mb-2 mr-sm-2" placeholder="Hàng Ghế" required>
+        <button type="submit" name="add" class="btn btn-primary" style="background-color: red;">Thêm</button>
+    </form>
+
     <div class="mb-3">
         <form method="GET" action="ghe.php">
             <input type="text" name="search" id="searchSeatInput" class="form-control" placeholder="Tìm kiếm ghế..." value="<?php echo htmlspecialchars($search); ?>">
@@ -70,6 +79,7 @@ if (isset($_GET['delete'])) {
                 <th>ID Ghế</th>
                 <th>ID Phòng</th>
                 <th>Hàng Ghế</th>
+                <th>Tình Trạng</th>
                 <th>Hành Động</th>
             </tr>
         </thead>
@@ -79,6 +89,7 @@ if (isset($_GET['delete'])) {
                     <td><?php echo $row['ghe_id']; ?></td>
                     <td><?php echo $row['phong_id']; ?></td>
                     <td><?php echo $row['hang_ghe']; ?></td>
+                    <td><?php echo $row['tinh_trang']; ?></td>
                     <td>
                         <a href="?edit=<?php echo $row['id']; ?>&page=<?php echo $page; ?>&search=<?php echo urlencode($search); ?>" class="btn btn-warning btn-sm">Sửa</a>
                         <a href="?delete=<?php echo $row['id']; ?>&page=<?php echo $page; ?>&search=<?php echo urlencode($search); ?>" class="btn btn-danger btn-sm">Xóa</a>
@@ -110,14 +121,7 @@ if (isset($_GET['delete'])) {
         </ul>
     </nav>
 
-    <h6>Thêm/Sửa Ghế</h6>
-    <form id="addSeatForm" method="POST">
-        <input type="hidden" name="id" id="id">
-        <input type="text" name="ghe_id" id="ghe_id" class="form-control mb-2 mr-sm-2" placeholder="ID Ghế" required>
-        <input type="text" name="phong_id" id="phong_id" class="form-control mb-2 mr-sm-2" placeholder="ID Phòng" required>
-        <input type="text" name="hang_ghe" id="hang_ghe" class="form-control mb-2 mr-sm-2" placeholder="Hàng Ghế" required>
-        <button type="submit" name="add" class="btn btn-primary" style="background-color: red;">Thêm</button>
-    </form>
+    
 </div>
 
 <script>

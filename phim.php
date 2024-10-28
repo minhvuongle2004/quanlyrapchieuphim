@@ -99,6 +99,22 @@ include 'header.php'
 <div class="container my-5" id="quanLyPhim">
     <h1 class="text-center" style="color: darkblue;">Quản Lý Phim</h1>
 
+    <!-- Form thêm phim mới -->
+    <h6>Thêm Phim Mới</h6>
+    <form method="post" action="" id="employeeForm" class="form-inline" style="padding-bottom: 20px;">
+        <input type="hidden" name="action" id="formAction" value="add">
+        <input type="text" name="phim_id" id="phim_id" class="form-control mb-2 mr-sm-2" placeholder="ID Phim" required pattern="[A-Za-z0-9]+" title="Chỉ cho phép chữ và số">
+        <input type="text" name="ten_phim" id="ten_phim" class="form-control mb-2 mr-sm-2" placeholder="Tên Phim" required>
+        <input type="text" name="the_loai" id="the_loai" class="form-control mb-2 mr-sm-2" placeholder="Thể Loại" required>
+        <input type="number" name="thoi_luong" id="thoi_luong" class="form-control mb-2 mr-sm-2" placeholder="Thời Lượng" required min="1">
+        <input type="text" name="dao_dien" id="dao_dien" class="form-control mb-2 mr-sm-2" placeholder="Đạo Diễn" required>
+        <input type="date" name="ngay_khoi_chieu" id="ngay_khoi_chieu" class="form-control mb-2 mr-sm-2" required>
+        <input type="date" name="ngay_ket_thuc" id="ngay_ket_thuc" class="form-control mb-2 mr-sm-2" required>
+        <input type="url" name="img_url" id="img_url" class="form-control mb-2 mr-sm-2" placeholder="URL hình ảnh" required>
+        <button type="submit" name="add" value="add" class="btn btn-primary" id="submitBtn" style="background-color: red;">Thêm phim</button>
+    </form>
+
+
     <!-- Tìm kiếm phim -->
     <div class="mb-3">
         <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm phim...">
@@ -146,21 +162,8 @@ include 'header.php'
         </tbody>
     </table>
 
-    <!-- Form thêm phim mới -->
-    <h6>Thêm Phim Mới</h6>
-    <form method="post" action="" id="employeeForm" class="form-inline">
-        <input type="hidden" name="action" id="formAction" value="add">
-        <input type="text" name="phim_id" id="phim_id" class="form-control mb-2 mr-sm-2" placeholder="ID Phim" required pattern="[A-Za-z0-9]+" title="Chỉ cho phép chữ và số">
-        <input type="text" name="ten_phim" id="ten_phim" class="form-control mb-2 mr-sm-2" placeholder="Tên Phim" required>
-        <input type="text" name="the_loai" id="the_loai" class="form-control mb-2 mr-sm-2" placeholder="Thể Loại" required>
-        <input type="number" name="thoi_luong" id="thoi_luong" class="form-control mb-2 mr-sm-2" placeholder="Thời Lượng" required min="1">
-        <input type="text" name="dao_dien" id="dao_dien" class="form-control mb-2 mr-sm-2" placeholder="Đạo Diễn" required>
-        <input type="date" name="ngay_khoi_chieu" id="ngay_khoi_chieu" class="form-control mb-2 mr-sm-2" required>
-        <input type="date" name="ngay_ket_thuc" id="ngay_ket_thuc" class="form-control mb-2 mr-sm-2" required>
-        <input type="url" name="img_url" id="img_url" class="form-control mb-2 mr-sm-2" placeholder="URL hình ảnh" required>
-        <button type="submit" name="add" value="add" class="btn btn-primary" id="submitBtn" style="background-color: red;">Thêm phim</button>
-    </form>
 
+    
 </div>
 
 <script>
